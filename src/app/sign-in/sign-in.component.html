@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <label>First Name</label>
+  <input ngModel name="fName" type="text" class="form-control me-2" >
+  <br>
+
+  <label>Last Name</label>
+  <input ngModel name="lName" type="text" class="form-control me-2">
+  <br>
+
+  <label>Email</label>
+  <input ngModel name="email" type="text" class="form-control me-2">
+  <br>
+
+  <label>Phone Number</label>
+  <input ngModel name="phoneN" type="text" class="form-control me-2" placeholder="Enter your username">
+  <br>
+
+  <label>Username</label>
+  <input ngModel name="username" type="text" class="form-control me-2" >
+  <br>
+
+  <label>Password</label>
+  <input ngModel name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your Password">
+  <br>
+
+  <button type="submit" class="btn btn-primary">Log in</button>
+</form>

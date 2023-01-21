@@ -1,0 +1,20 @@
+<br>
+<h1>Categories</h1>
+<br>
+<!--
+<div class="list-group align-items-center" *ngFor="let category of categories;">
+  <a class="list-group-item list-group-item-action w-25" >
+    {{category}}
+  </a>
+</div>-->
+
+<div class="container">
+  <div class="row row-cols-7" >
+    <button class="btn btn-light card" (click)="onClickCategory(category)" *ngFor="let category of categories;">
+      <div class="card-body">
+        <p class="card-title">{{category}}</p>
+      </div>
+    </button>
+  </div>
+</div>
+

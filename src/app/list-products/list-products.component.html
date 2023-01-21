@@ -1,0 +1,7 @@
+<ul class="row row-cols-5">
+
+  <app-product-item *ngFor="let elt of products;" [product]="elt" (productSelected)="affiche($event)"></app-product-item>
+
+</ul>
+
+

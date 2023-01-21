@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <label>username</label>
+  <input ngModel name="username" type="text" class="form-control me-2" placeholder="Enter your username">
+  <br>
+
+  <label>Password</label>
+  <input ngModel name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your Password">
+  <br>
+  <p>Some account examples:</p>
+  <ul>
+    <li><strong>username : </strong>atuny0  <strong>, password : </strong>9uQFF1Lh</li>
+    <li><strong>username : </strong>hbingley1  <strong>, password : </strong>CQutx25i8r</li>
+    <li><strong>username : </strong>rshawe2   <strong>, password : </strong>OWsTbMUgFc</li>
+    <li><strong>username : </strong>yraigatt3   <strong>, password : </strong>sRQxjPfdS</li>
+    <li><strong>username : </strong>kmeus4   <strong>, password : </strong>aUTdmmmbH</li>
+    <li><strong>username : </strong>jtreleven5   <strong>, password : </strong>zY1nE46Zm</li>
+  </ul>
+
+  <button type="submit" class="btn btn-primary">Log in</button>
+</form>

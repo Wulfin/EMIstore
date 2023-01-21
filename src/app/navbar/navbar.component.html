@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">EMIstore</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="panier">
+            Panier
+            <span *ngIf="cartItems.length>0" class="badge rounded-pill badge-notification bg-dark">
+              {{cartItems.length}}
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="category">Category</a>
+        </li>
+        <li class="nav-item" routerLink="profil" *ngIf="getUser()">
+          <a class="nav-link" routerLink="profil">
+            <img src="{{getUser().image}}" width="40" class="rounded-circle">
+            {{getUser().username}}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="Auth" *ngIf="!getUser()">Authentification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="signIn" *ngIf="!getUser()">Sign up</a>
+        </li>
+      </ul>
+      <form class="d-flex" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <input ngModel name="toSearch" [(ngModel)]="searched" type="text" class="form-control me-2" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" routerLink="">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

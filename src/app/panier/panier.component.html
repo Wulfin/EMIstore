@@ -1,0 +1,10 @@
+<ul class="row row-cols-4">
+
+  <app-panier-item *ngFor="let elt of productsToBuy;" [detailPanier]="elt" ></app-panier-item>
+
+</ul>
+
+<nav class="navbar navbar-light bg-light">
+  <span></span>
+  <span class="navbar-brand mb-0 h1" >Total: ${{getTotal()}}</span>
+</nav>
