@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">EMIstore</a>
+    <a class="navbar-brand" routerLink="">
+      <img width="40" class="rounded-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCEiqbu8RFS0BEH9bDeaeLxrxa63cTklI7YQ&usqp=CAU">
+      EMIstore
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +11,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" routerLink="panier">
-            Panier
+            My cart
             <span *ngIf="cartItems.length>0" class="badge rounded-pill badge-notification bg-dark">
               {{cartItems.length}}
             </span>
@@ -31,7 +34,7 @@
         </li>
       </ul>
       <form class="d-flex" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <input ngModel name="toSearch" [(ngModel)]="searched" type="text" class="form-control me-2" placeholder="Search" aria-label="Search">
+        <input ngModel name="toSearch" [(ngModel)]="searched" type="text" class="form-control me-2" placeholder="what are you looking for?" aria-label="Search">
         <button class="btn btn-outline-success" type="submit" routerLink="">Search</button>
       </form>
     </div>

@@ -31,4 +31,25 @@ export class PanierComponent {
     })
     return total
   }
+
+  addArticle(detailPanier: DetailPanier){
+    if(detailPanier.quantity>0) detailPanier.quantity++;
+  }
+
+  removeArticle(detailPanier: DetailPanier){
+    if(detailPanier.quantity>0) detailPanier.quantity--;
+    if (detailPanier.quantity == 0) {
+      let index = this.panierService.productsInCart.indexOf(detailPanier)
+      this.panierService.productsInCart.splice(index,1)
+    }
+  }
+
+  removeProduct(detailPanier: DetailPanier){
+    let index = this.panierService.productsInCart.indexOf(detailPanier)
+    this.panierService.productsInCart.splice(index,1)
+  }
+
+  toBuy() {
+    alert("Congratulations, come another time to our amazing school's digital store :)")
+  }
 }

@@ -1,10 +1,60 @@
-<ul class="row row-cols-4">
+<header id="site-header">
+  <div class="container">
+    <h1>My cart</h1>
+  </div>
+</header>
 
-  <app-panier-item *ngFor="let elt of productsToBuy;" [detailPanier]="elt" ></app-panier-item>
+<div class="container">
 
-</ul>
+  <section id="cart">
+    <article class="product" *ngFor="let elt of productsToBuy">
+      <header>
+        <a class="remove" (click)="removeProduct(elt)">
+          <img src="{{elt.product.thumbnail}}" alt="">
 
-<nav class="navbar navbar-light bg-light">
-  <span></span>
-  <span class="navbar-brand mb-0 h1" >Total: ${{getTotal()}}</span>
-</nav>
+          <h3>Remove product</h3>
+        </a>
+      </header>
+
+      <div class="content">
+
+        <h1>{{elt.product.title}}</h1>
+        <h4>{{elt.product.category}}</h4>
+
+        {{elt.product.description}}.
+      </div>
+
+      <footer class="content">
+        <span class="qt-minus" (click)="removeArticle(elt)">-</span>
+        <span class="qt">{{elt.quantity}}</span>
+        <span class="qt-plus" (click)="addArticle(elt)">+</span>
+
+        <h2 class="full-price">
+          $ {{elt.product.price * elt.quantity}}
+        </h2>
+
+        <h2 class="price">
+          $ {{elt.product.price}}
+        </h2>
+      </footer>
+    </article>
+  </section>
+
+</div>
+
+<footer id="site-footer">
+  <div class="container clearfix">
+
+    <div class="left">
+      <h2 class="subtotal">Subtotal:   $ <span>{{getTotal().toFixed(2)}}</span></h2>
+      <h3 class="tax">Taxes (5%):   $ <span>{{(getTotal()*0.05).toFixed(2)}}</span></h3>
+      <h3 class="shipping">Shipping:   $ <span>{{(getTotal()*0.4).toFixed(2)}}</span></h3>
+    </div>
+
+    <div class="right">
+      <h1 class="total">Total: $ <span>{{(getTotal()*1.45).toFixed(2)}}</span></h1>
+      <a class="btn" (click)="toBuy()">Buy</a>
+    </div>
+
+  </div>
+</footer>

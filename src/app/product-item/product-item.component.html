@@ -3,14 +3,17 @@
       <img src="{{product.thumbnail}}" class="card-img-top" alt="...">
     <div class="card-body">
       <div class="d-flex justify-content-between">
-        <p class="card-title">{{product.title}}</p>
+        <h4 class="card-title">{{product.title}}</h4>
       </div>
       <div>
-        <p class="card-text">${{product.price}}</p>
+        <p class="card-text">Brand: {{product.brand}}</p>
+      </div>
+      <div>
+        <p class="rating">({{product.rating}}/5)</p><p>Price: ${{product.price}}</p>
       </div>
       <div class="card-footer">
         <button class="btn btn-primary w-50" (click)="addToCart(product)">Buy Now</button>
-        <button class="btn btn-outline-dark w-50" (click)="showDetails(product.id)">show Details</button>
+        <button class="btn btn-outline-dark w-50" (click)="showDetails(product.id)">Details</button>
         <div *ngIf="isInCart()">
           <p class="font text"><i>{{getQuantityInCart()}} articles in cart</i></p>
         </div>
